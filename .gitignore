@@ -50,6 +50,7 @@ backup/
 .idea/
 
 # local development
+pnpm-workspace.yaml
 .eslintrc.json
 .prettierrc.json
 .stylelintrc.json
