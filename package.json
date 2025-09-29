@@ -1,6 +1,6 @@
 {
   "name": "nextjs-cook",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev -p 1234",
@@ -40,6 +40,8 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@swc/core": "^1.13.5",
+    "@swc/helpers": "^0.5.17",
     "@types/node": "^20.19.17",
     "@types/react": "^19.1.15",
     "@types/react-dom": "^19.1.9",
