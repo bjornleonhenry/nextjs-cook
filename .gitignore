@@ -51,6 +51,7 @@ backup/
 
 # local development
 pnpm-workspace.yaml
+jest.config.ts
 .eslintrc.json
 .prettierrc.json
 .stylelintrc.json

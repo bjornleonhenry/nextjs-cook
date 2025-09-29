@@ -219,13 +219,13 @@ const features = [
     name: "GitHub Stars",
     description: "Star this repository to show your support.",
     className: "col-span-3 md:col-span-1",
-    href: `${process.env.NEXT_PUBLIC_GITHUB_URL || "#"}/${process.env.NEXT_PUBLIC_REPO_NAME || ""}`,
+    href: `${process.env.NEXT_PUBLIC_GITHUB_URL || "#"}`,
     cta: "Star repository",
     background: (
       <div className="absolute h-full w-full left-0 top-0 origin-top rounded-md transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_70%)] group-hover:scale-105 group-hover:-translate-y-4">
         <div className="text-7xl font-semibold w-full flex justify-center items-center h-2/3 group-hover:-translate-y-2 transition-all duration-300">
           <a
-            href={`${process.env.NEXT_PUBLIC_GITHUB_URL || "#"}/${process.env.NEXT_PUBLIC_REPO_NAME || ""}`}
+            href={`${process.env.NEXT_PUBLIC_GITHUB_URL || "#"}`}
             className="flex items-center gap-2 border shadow-xl p-5 rounded-lg border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
           >
             <GitHubStars />
