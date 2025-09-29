@@ -48,3 +48,8 @@ pnpm-lock.yaml
 pb/
 backup/
 .idea/
+
+# local development
+.eslintrc.json
+.prettierrc.json
+.stylelintrc.json
