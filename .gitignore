@@ -50,7 +50,6 @@ backup/
 .idea/
 
 # local development
-pnpm-workspace.yaml
 jest.config.ts
 .eslintrc.json
 .prettierrc.json
