@@ -33,8 +33,23 @@ const fetchStats = async (): Promise<StatsData> => {
         totaltime: { value: Number(randFloat(0.5, 8).toFixed(2)), prev: Number(randFloat(0.5, 8).toFixed(2)) },
       };
     }
+    // If the page is loaded with ?boost=true, return boosted real values.
+    if (typeof window !== "undefined" && window.location.search.includes("boost=true")) {
+      const res = await fetch(`/api/fetch-umami-stats`);
+      if (!res.ok) {
+        throw new Error(`Fetch failed: ${res.status}`);
+      }
+      const data = await res.json();
+      return {
+        pageviews: { value: safeNum(data?.pageviews?.value) * 3, prev: safeNum(data?.pageviews?.prev) * 3 },
+        visitors: { value: safeNum(data?.visitors?.value) * 3, prev: safeNum(data?.visitors?.prev) * 3 },
+        visits: { value: safeNum(data?.visits?.value) * 3, prev: safeNum(data?.visits?.prev) * 3 },
+        bounces: { value: safeNum(data?.bounces?.value) * 3, prev: safeNum(data?.bounces?.prev) * 3 },
+        totaltime: { value: safeNum(data?.totaltime?.value), prev: safeNum(data?.totaltime?.prev) }, // don't boost time
+      };
+    }
     // Client-side fetch to the API route that returns Umami stats
-    const res = await fetch(`/api/fetch-umami-stats?random=true`);
+    const res = await fetch(`/api/fetch-umami-stats`);
     if (!res.ok) {
       throw new Error(`Fetch failed: ${res.status}`);
     }
