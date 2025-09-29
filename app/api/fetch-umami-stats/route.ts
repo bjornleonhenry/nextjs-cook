@@ -34,10 +34,8 @@ export async function GET(request: Request) {
     } catch {
       // ignore URL parsing issues and continue to real fetch
     }
-    // The website ID for "cook" - update this to your actual website ID from Umami dashboard
-    const websiteId = '8edbf6a7-808f-4db7-8d92-5b9e7f7b2911';
-
-    // Get the current time and all time (from beginning)
+    // The website ID for "cook"
+    const websiteId = '5d6a594d-a1c0-49ab-ac5f-0947d36c11c5';    // Get the current time and all time (from beginning)
     const now = Date.now();
     const allTimeStart = 0; // Start from the beginning
 

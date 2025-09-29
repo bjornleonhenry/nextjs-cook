@@ -11,7 +11,7 @@ const client = getClient({
 export async function GET(request: Request) {
   try {
     // The website ID for "bento"
-    const websiteId = '8edbf6a7-808f-4db7-8d92-5b9e7f7b2911';
+    const websiteId = '5d6a594d-a1c0-49ab-ac5f-0947d36c11c5';
 
     // Get the current time and one year ago in milliseconds
     const now = Date.now();
