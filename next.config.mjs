@@ -54,7 +54,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'https://astro-bento.vercel.app',
+        hostname: 'astro-bento.vercel.app',
         port: '',
         pathname: '/**',
       },
