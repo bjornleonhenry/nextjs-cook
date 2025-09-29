@@ -39,7 +39,7 @@ const ReviewCard = ({
           <div className="flex flex-col">
             <div className="flex items-start gap-2">
               <Image
-                src={image.startsWith('http') ? image : `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}${image}`}
+                src={image}
                 alt={name}
                 width={32}
                 height={32}

@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { IconProps } from "@radix-ui/react-icons/dist/types";
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useRef, RefObject } from "react";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -28,7 +28,7 @@ export function AnimatedBeamMultipleOutputs({
 }: {
   className?: string;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const div3Ref = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ export function AnimatedBeamMultipleOutputs({
         "relative flex w-full max-w-[500px] lg:max-w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl",
         className
       )}
-      ref={containerRef}
+      ref={containerRef as React.RefObject<HTMLDivElement>}
     >
       <div className="flex h-full w-full flex-row items-stretch justify-between gap-10">
         <div className="flex flex-col justify-center">
@@ -77,9 +77,8 @@ export function AnimatedBeamMultipleOutputs({
 
       {/* AnimatedBeams */}
 
-      {/* div1 to div6 */}
       <AnimatedBeam
-        containerRef={containerRef}
+        containerRef={containerRef as RefObject<HTMLElement>}
         fromRef={div1Ref}
         toRef={div6Ref}
         duration={3}

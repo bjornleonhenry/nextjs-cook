@@ -4,7 +4,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 interface BoxRevealProps {
-  children: JSX.Element;
+  children: React.ReactElement;
   width?: "fit-content" | "100%";
   boxColor?: string;
   duration?: number;
