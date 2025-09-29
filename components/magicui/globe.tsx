@@ -96,8 +96,8 @@ export default function Globe({
   className?: string;
   config?: COBEOptions;
 }) {
+  const widthRef = useRef(0);
   const phiRef = useRef(0);
-  let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef(null);
   const pointerInteractionMovement = useRef(0);
@@ -125,20 +125,20 @@ export default function Globe({
   };
 
   const onRender = useCallback(
-    (state: Record<string, any>) => {
+    (state: any) => {
       if (!pointerInteracting.current) phiRef.current += 0.0025;
       state.phi = phiRef.current + r.get();
-      state.width = width * 2;
-      state.height = width * 2;
+      state.width = widthRef.current * 2;
+      state.height = widthRef.current * 2;
     },
-    [pointerInteracting, r]
+    [r]
   );
 
-  const onResize = () => {
+  const onResize = useCallback(() => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth;
+      widthRef.current = canvasRef.current.offsetWidth;
     }
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
@@ -146,14 +146,14 @@ export default function Globe({
 
     const globe = createGlobe(canvasRef.current!, {
       ...config,
-      width: width * 2,
-      height: width * 2,
+      width: widthRef.current * 2,
+      height: widthRef.current * 2,
       onRender,
     });
 
     setTimeout(() => (canvasRef.current!.style.opacity = "1"));
     return () => globe.destroy();
-  }, [config, onRender, onResize, width]);
+  }, [config, onRender, onResize]);
 
   return (
     <div
