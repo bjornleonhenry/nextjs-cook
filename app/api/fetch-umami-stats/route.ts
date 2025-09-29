@@ -34,21 +34,21 @@ export async function GET(request: Request) {
     } catch {
       // ignore URL parsing issues and continue to real fetch
     }
-    // The website ID for "bento"
+    // The website ID for "cook" - update this to your actual website ID from Umami dashboard
     const websiteId = '8edbf6a7-808f-4db7-8d92-5b9e7f7b2911';
 
-    // Get the current time and 7 days ago in milliseconds
+    // Get the current time and all time (from beginning)
     const now = Date.now();
-    const sevenDaysAgo = now - (7 * 24 * 60 * 60 * 1000);
+    const allTimeStart = 0; // Start from the beginning
 
     // Prepare the data object for getWebsiteStats
     const statsData = {
-      startAt: sevenDaysAgo,
+      startAt: allTimeStart,
       endAt: now,
     };
 
     console.log('Fetching stats for website:', websiteId);
-    console.log('Time range:', { startAt: new Date(sevenDaysAgo), endAt: new Date(now) });
+    console.log('Time range:', { startAt: new Date(allTimeStart), endAt: new Date(now) });
 
     const { ok, data, status, error } = await client.getWebsiteStats(websiteId, statsData);
 

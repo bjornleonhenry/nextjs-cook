@@ -184,11 +184,6 @@ export default function StatsChart() {
         visitors: stats.bounces.value,
         fill: "var(--color-bounces)",
       },
-      {
-        type: "totaltime",
-        visitors: stats.totaltime.value,
-        fill: "var(--color-totaltime)",
-      },
     ];
   }, [stats]);
 
