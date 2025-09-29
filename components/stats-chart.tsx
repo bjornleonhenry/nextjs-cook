@@ -34,7 +34,7 @@ const fetchStats = async (): Promise<StatsData> => {
       };
     }
     // Client-side fetch to the API route that returns Umami stats
-    const res = await fetch(`/api/fetch-umami-stats?random=true`);
+    const res = await fetch(`/api/fetch-umami-stats?random=false`);
     if (!res.ok) {
       throw new Error(`Fetch failed: ${res.status}`);
     }
