@@ -50,6 +50,6 @@ backup/
 .idea/
 
 # local development
-# .eslintrc.json
+.eslintrc.json
 .prettierrc.json
 .stylelintrc.json
