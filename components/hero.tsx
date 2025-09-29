@@ -11,11 +11,15 @@ export default function Hero() {
   return (
     <div className="relative flex h-full w-full mx-auto items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
       <div className="flex flex-col items-start justify-center h-full overflow-hidden p-6 z-50">
-        <WordPullUp words="Let's Cook" />
-
+        <WordPullUp words="Let's Cook" className="block md:hidden" />
+        <WordPullUp words="Let's Cook" className="hidden md:block text-3xl md:text-6xl lg:text-7xl" />
         <div className="text-lg text-neutral-500 dark:text-neutral-400 lg:px-1 w-full ">
-          <BlurIn className="w-3/4 sm:w-2/3">
-            I craft sleek, full-stack experiences that users love and other developers
+          <BlurIn className="w-3/4 sm:w-2/3 hidden md:block">
+            I craft sleek full-stack experiences that users love and otherdevelopers
+            enjoy expanding.
+          </BlurIn>
+          <BlurIn className="w-3/4 sm:w-2/3 md:hidden">
+            I craft modern, full-stack experiences that users love and developers
             enjoy expanding.
           </BlurIn>
 

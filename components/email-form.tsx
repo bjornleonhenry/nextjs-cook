@@ -42,8 +42,8 @@ export function EmailForm() {
     setIsLoading(true); // Set loading state to true
     try {
       // wait for half a second to show loading animation
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      const record = await pb.collection("cook_form_submissions").create(data);
+      await new Promise((resolve) => setTimeout(resolve, 500)); 
+      const record = await pb.collection("api/cook_form_submissions").create(data);
       toast({
         variant: "success",
         title: "Email submitted successfully!",

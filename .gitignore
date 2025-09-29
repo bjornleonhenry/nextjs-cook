@@ -55,3 +55,7 @@ jest.config.ts
 .eslintrc.json
 .prettierrc.json
 .stylelintrc.json
+
+# backup and temp files
+*.bak
+*.tmp
