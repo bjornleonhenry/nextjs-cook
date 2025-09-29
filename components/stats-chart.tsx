@@ -142,11 +142,7 @@ const chartConfig = {
   bounces: {
     label: "Bounces",
     color: "hsl(var(--chart-4))",
-  },
-  totaltime: {
-    label: "Average Time",
-    color: "hsl(var(--chart-5))",
-  },
+  }
 } satisfies ChartConfig;
 
 export default function StatsChart() {
@@ -183,12 +179,7 @@ export default function StatsChart() {
         type: "bounces",
         visitors: stats.bounces.value,
         fill: "var(--color-bounces)",
-      },
-      {
-        type: "totaltime",
-        visitors: stats.totaltime.value,
-        fill: "var(--color-totaltime)",
-      },
+      }
     ];
   }, [stats]);
 
@@ -225,14 +216,14 @@ export default function StatsChart() {
                       y={viewBox.cy}
                       className="fill-foreground text-5xl font-bold"
                     >
-                        {chartData[2]?.visitors ?? 0}
+                        {chartData[0]?.visitors ?? 0}
                     </tspan>
                     <tspan
                       x={viewBox.cx}
                       y={(viewBox.cy || 0) + 24}
                       className="fill-muted-foreground "
                     >
-                      {chartConfig.visits.label}
+                      {chartConfig.pageviews.label}
                     </tspan>
                   </text>
                 );
