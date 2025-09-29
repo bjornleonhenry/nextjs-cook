@@ -13,13 +13,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
-import PocketBase from "pocketbase";
 import { SendHorizonal, LoaderCircle } from "lucide-react";
 
 import { useState } from "react";
-
-// Initialize PocketBase client
-const pb = new PocketBase(process.env.NEXT_PUBLIC_POCKETBASE_URL);
 
 // Define the form schema with email validation
 const FormSchema = z.object({
@@ -43,7 +39,14 @@ export function EmailForm() {
     try {
       // wait for half a second to show loading animation
       await new Promise((resolve) => setTimeout(resolve, 500)); 
-      const record = await pb.collection("api/cook_form_submissions").create(data);
+      const response = await fetch('/api/form-submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error);
+      const record = result.record;
       toast({
         variant: "success",
         title: "Email submitted successfully!",
