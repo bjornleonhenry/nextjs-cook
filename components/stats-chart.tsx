@@ -35,7 +35,7 @@ const fetchStats = async (): Promise<StatsData> => {
     }
     // If the page is loaded with ?boost=true, return boosted real values.
     if (typeof window !== "undefined" && window.location.search.includes("boost=true")) {
-      const res = await fetch(`/api/fetch-umami-stats`);
+      const res = await fetch(`/api/fetch-umami-stats?boost=true`);
       if (!res.ok) {
         throw new Error(`Fetch failed: ${res.status}`);
       }
