@@ -52,6 +52,18 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+            {
+        protocol: 'https',
+        hostname: 'dev.bjornleonhenry.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'dev.bjornleonhenry.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 

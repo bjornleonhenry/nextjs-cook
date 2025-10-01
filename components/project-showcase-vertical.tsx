@@ -34,7 +34,7 @@ const ReviewCard = ({
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <a href={`https://dev.blh.ink/projects/${slug}`}>
+      <a href={`https://dev.bjornleonhenry.com/projects/${slug}`}>
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-col">
             <div className="flex items-start gap-2">
