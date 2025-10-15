@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'; // defaults to autoc
 export async function GET(request: Request) {
-  const url = `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/api/v1/fetchProjectsFeed.json`;
+  const url = `${process.env.NEXT_PUBLIC_PORTFOLIO_URL}/api/v1/fetchProjectsFeed.json?featured=true`;
   const headers = { "Accept": "application/json" };
   const reqUrl = new URL(request.url);
     // debug mode removed in follow-up patch — always return normalized postsData
