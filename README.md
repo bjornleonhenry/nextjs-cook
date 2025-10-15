@@ -4,7 +4,7 @@
 
 An ultra-modern, bento-box styled portfolio landing page for developers, designers, and other creatives.
 
-[![Cook Portfolio Preview](/public/images/thumbnail.png)](https://cook.engage-dev.com)
+[![Cook Portfolio Preview](/public/bjorleonhenry.png)](https://bjornleonhenry.com)
 
 **NOTE:** If you would like to contribute, please check out the issues tab for a list of tasks that need to be completed.
 
@@ -58,7 +58,7 @@ Go to [http://localhost:8080](http://localhost:8080) to see the Pocketbase dashb
 ### Client Setup
 
 ```bash
-git clone https://github.com/engageintellect/cook.git
+git clone https://github.com/bjorleonhenry/cook.git
 cd cook
 ```
 
